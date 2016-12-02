@@ -1,0 +1,52 @@
+﻿<div id="TreeGridContainer" style="width:100%;"></div>
+
+<script>
+  $(function () {
+      $("#TreeGridContainer").ejTreeGrid({
+          dataSource: sampleData,
+          childMapping: "subtasks",
+          treeColumnIndex: 1,
+          isResponsive: true,
+          editSettings: {
+              allowAdding: true,
+              allowEditing: true,
+              allowDeleting: true,
+              editMode: "cellEditing",
+              rowPosition: "belowSelectedRow"
+
+          },
+          toolbarSettings: {
+              showToolbar: true,
+              toolbarItems: [ej.TreeGrid.ToolbarItems.Add,
+              ej.TreeGrid.ToolbarItems.Edit,
+              ej.TreeGrid.ToolbarItems.Delete,
+              ej.TreeGrid.ToolbarItems.Update,
+              ej.TreeGrid.ToolbarItems.Cancel,
+              ej.TreeGrid.ToolbarItems.ExpandAll,
+              ej.TreeGrid.ToolbarItems.CollapseAll,
+              ej.TreeGrid.ToolbarItems.PdfExport,
+              ej.TreeGrid.ToolbarItems.ExcelExport
+              ]
+          },
+          contextMenuSettings: {
+              showContextMenu: true,
+              contextMenuItems: ["add", "edit", "delete"]
+          },
+          allowSorting: true,
+          allowMultiSorting: true,
+          allowFiltering: true,
+          filterSettings: { filterBarMode: "immediate" },
+          showColumnChooser: true,
+          columns: [
+              { field: "taskID", headerText: "Task Id", editType: "numericedit", width: "45", isFrozen: true, allowFreezing: false },
+              { field: "taskName", headerText: "Task Name", editType: "stringedit" },
+              { field: "startDate", headerText: "Start Date", editType: "datepicker" },
+              { field: "endDate", headerText: "End Date", editType: "datepicker" },
+              { field: "duration", headerText: "Duration", editType: "numericedit" },
+              { field: "progress", headerText: "Progress", editType: "numericedit" }
+          ],
+
+      })
+  });
+  
+</script>

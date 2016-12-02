@@ -1,0 +1,47 @@
+﻿<div class="e-pivotgrid">
+    <div id="PivotGrid1" style="width: 50%; height: 650px; overflow: auto; float: left; margin:20px 0 0 20px;">
+    </div>
+    <div id="PivotSchemaDesigner1" style="height:300px;margin-top:20px; float:right">
+    </div>  
+</div><br /><br />
+<button id="Button1">Apply formatting</button>
+
+<script type="text/javascript">
+    var btnTarget, relationalRadioBtnObj, olapRadioBtnObj, rdbClient, rdbServer, languageListDropdown;
+
+    var pivotdataSource = {
+        data: pivot_dataset, cube: "",
+        rows: [{ fieldName: "Country", fieldCaption: "Country" }, { fieldName: "State", fieldCaption: "State" }],
+        columns: [{ fieldName: "Product", fieldCaption: "Product" }],
+        values: [{ fieldName: "Amount", fieldCaption: "Amount" }, { fieldName: "Quantity", fieldCaption: "Quantity" }],
+        filters: []
+    };
+    $(function () {
+ 
+        $("#PivotGrid1").ejPivotGrid({
+            dataSource: pivotdataSource,
+            renderSuccess: "loadSchemaDesigner",
+            enableGroupingBar: true,
+            enableConditionalFormatting: true,
+            enableCellEditing: true
+        });
+        $("#Button1").ejButton({
+            size: "normal",
+            roundedCorner: true,
+            click: "btnClick"
+        });
+    });
+
+    function loadSchemaDesigner(args) {
+        if (args._dataModel == "XMLA")
+            $("#PivotSchemaDesigner1").ejPivotSchemaDesigner({ pivotControl: this, layout: ej.PivotSchemaDesigner.Layouts.Excel, olap: { showKPI: false, showNamedSets: true }, locale: args.model.locale });
+        else
+            $("#PivotSchemaDesigner1").ejPivotSchemaDesigner({ pivotControl: this, layout: ej.PivotSchemaDesigner.Layouts.Excel, locale: args.model.locale });
+    }
+    function btnClick(e) {
+        var pivotGridObj = $('#PivotGrid1').data("ejPivotGrid");
+        if (pivotGridObj.model.enableConditionalFormatting) {
+            pivotGridObj.createConditionalDialog();
+        }
+    }
+</script>

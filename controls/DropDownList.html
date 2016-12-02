@@ -1,0 +1,15 @@
+﻿<input type="text" id="selectcompany" />
+<script>
+    $(function () {
+        var datalist = ej.DataManager({ url: "http://mvc.syncfusion.com/services/Northwnd.svc/Customers" });
+        $('#selectcompany').ejDropDownList({
+            dataSource: datalist,
+            fields: { text: "CompanyName", value: 'ContactName' },
+            width: 260,
+            showCheckbox: true,
+            enableFilterSearch: true,
+            enablePopupResize: true
+        });
+
+    });
+</script>

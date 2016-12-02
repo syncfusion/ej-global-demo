@@ -1,0 +1,57 @@
+
+
+{
+
+  "name": "syncfusion-ej-global-demo",
+
+  "version": "14.4.15",
+
+  "description": "Localization demo for Syncfusion Essential JavaScript widgets",
+
+  "repository": {
+
+    "type": "git",
+
+    "url": "git+https://github.com/syncfusion/ej-global.git"
+
+  },
+ "scripts": {
+   "start": "npm run lite",
+   "lite": "node node_modules\\lite-server\\bin\\lite-server"
+ },
+  "keywords": [
+	"syncfusion",
+    "ej",
+    "essential",
+    "global",
+	"localization",
+	"i18n",
+	"l10n",
+	"ej-global",
+	"syncfusion ej-global",
+	"javascript"
+
+  ],
+
+  "author": "Syncfusion Inc",
+
+  "bugs": {
+
+    "url": "https://github.com/syncfusion/ej-global/issues"
+
+  },
+
+  "homepage": "https://github.com/syncfusion/ej-global#readme",
+
+  "dependencies": {
+   "bootstrap": "^3.3.6",
+    "jquery": "^3.1.1",
+    "jsrender": "^0.9.75",
+	"jquery-validation-unobtrusive":"^3.2.6",
+    "syncfusion-javascript": "^14.4.15"
+  },
+   "devDependencies": {
+   "lite-server": "^2.2.2"
+   }
+}
+

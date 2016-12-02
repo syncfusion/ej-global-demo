@@ -1,0 +1,35 @@
+﻿<h5>Excel Filter</h5><div id="Grid"></div><br />
+<h5>Menu Filter</h5><div id="Grid1"></div>
+
+<script type="text/javascript">
+    $("#Grid").ejGrid({
+        // the datasource "window.gridData" is referred from jsondata.min.js
+        dataSource: window.gridData,
+        allowFiltering: true,
+        filterSettings: { filterType: "excel" },
+        columns:
+            [
+                { field: "OrderID", headerText: "Order ID", isPrimaryKey: true, textAlign: ej.TextAlign.Right, width: 75 },
+                { field: "CustomerID", headerText: "Customer ID", width: 95 },
+                { field: "OrderDate", headerText: "Order Date", width: 100, format: "{0:MM/dd/yyyy}" },
+                { field: "EmployeeID", headerText: "Employee ID", textAlign: ej.TextAlign.Right, width: 95 },
+                { field: "Freight", headerText: "Freight", textAlign: ej.TextAlign.Right, width: 75, format: "{0:C}" },
+                { field: "ShipCity", headerText: "Ship City", width: 80 }
+            ]
+    });
+    $("#Grid1").ejGrid({
+        // the datasource "window.gridData" is referred from jsondata.min.js
+        dataSource: window.gridData, allowFiltering: true,
+        filterSettings: {
+            filterType: "menu"
+        },
+        columns: [
+              { field: "OrderID" },
+              { field: "EmployeeID" },
+              { field: "CustomerID" },
+              { field: "OrderDate", format: "{0:dd/MM/yyyy}" },
+              { field: "Verified" }
+        ]
+    });
+
+</script>

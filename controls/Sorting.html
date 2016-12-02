@@ -1,0 +1,24 @@
+﻿<div id="Grid"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#Grid").ejGrid({
+            //The datasource "window.gridData" is referred from 'http://js.syncfusion.com/demos/web/scripts/jsondata.min.js'
+            dataSource: window.gridData,
+            allowSorting: true,
+            allowMultiSorting: true,
+            contextMenuSettings: { enableContextMenu: true },
+            editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, editMode: "batch" },
+            toolbarSettings: { showToolbar: true, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.Update, ej.Grid.ToolBarItems.Cancel] },
+            //Sorting more than one column while initializing the grid itself. If direction is not specified, by default it takes as ascending.
+            sortSettings: { sortedColumns: [{ field: "EmployeeID", direction: "descending" }, { field: "CustomerID" }] },
+            columns: [
+          { field: "OrderID", headerText: "Order ID", textAlign: ej.TextAlign.Right, width: 75 },
+          { field: "CustomerID", headerText: "Customer ID", width: 90 },
+          { field: "EmployeeID", headerText: "Employee ID", width: 90, textAlign: ej.TextAlign.Right },
+          { field: "Freight", headerText: "Freight", textAlign: ej.TextAlign.Right, width: 75, format: "{0:C}" },
+          { field: "ShipName", headerText: "Ship Name", width: 110 }
+            ]
+        });
+    });
+
+</script>

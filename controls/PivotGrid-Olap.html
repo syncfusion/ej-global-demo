@@ -1,0 +1,52 @@
+﻿    <div id="PivotGrid1"></div>
+    <div id="Pager1" style="margin-top: 10px; overflow: auto"></div><br />
+    <div id="PivotSchemaDesigner1"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#PivotGrid1").ejPivotGrid({
+            dataSource: {
+                data: "http://bi.syncfusion.com/olap/msmdpump.dll;Locale Identifier=1033;",
+                //data: "http://bi.syncfusion.com/olap/msmdpump.dll;Locale Identifier=1034;",
+                //data: "http://bi.syncfusion.com/olap/msmdpump.dll;Locale Identifier=1036;",
+                catalog: "Adventure Works DW 2008 SE",
+                cube: "Adventure Works",
+                rows: [{
+                    fieldName: "[Date].[Fiscal]"
+                }],
+                columns: [{
+                    fieldName: "[Customer].[Customer Geography]"
+                }],
+                values: [{
+                    measures: [{
+                        fieldName: "[Measures].[Internet Sales Amount]",
+                    }],
+                    axis: "columns"
+                }],
+                pagerOptions: {
+                    categoricalPageSize: 5,
+                    seriesPageSize: 5,
+                    categoricalCurrentPage: 1,
+                    seriesCurrentPage: 1
+                }
+            },
+            enablePaging : true,
+            enableGroupingBar: true,
+            renderSuccess: "RenderFieldList"
+        });
+        $("#Pager1").ejPivotPager({
+            mode: ej.PivotPager.Mode.Both,
+            targetControlID: "PivotGrid1"
+        });
+    });
+    function RenderFieldList(args) {
+        $("#PivotSchemaDesigner1").ejPivotSchemaDesigner({
+            pivotControl: args,
+            layout: ej.PivotSchemaDesigner.Layouts.Excel,
+            olap: {
+                showKPI: false,
+                showNamedSets: true
+            }
+        });
+    }
+</script>

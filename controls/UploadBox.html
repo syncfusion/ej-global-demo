@@ -1,0 +1,14 @@
+﻿
+    <div id="UploadDefault"></div>
+
+    <script>
+        $(function () {
+		 $("#UploadDefault").ejUploadbox({
+		     saveUrl:"//js.syncfusion.com/demos/ejServices/api/uploadbox/Save",
+		     removeUrl: "//js.syncfusion.com/demos/ejServices/api/uploadbox/Remove",
+		     allowDragAndDrop: true,
+		     extensionsAllow: ".zip",
+		     multipleFilesSelection: true
+		 });
+        });      
+    </script>

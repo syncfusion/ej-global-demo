@@ -1,0 +1,30 @@
+﻿<div id="Spreadsheet"></div>
+<script>
+    var data = ej.DataManager(window.filterData).executeLocal(ej.Query().select("OrderID", "CustomerID", "EmployeeID", "ShipName", "ShipCity", "ShipAddress"));
+    $(function () {
+        $("#Spreadsheet").ejSpreadsheet({
+            sheets: [{ rangeSettings: [{ dataSource: data }] }],
+            allowFormulaBar: true,
+            printSettings: {
+                allowPrinting: true
+            },
+            allowSorting: true,
+            allowWrap: true,
+            allowFiltering: true,
+            importSettings: {
+                importMapper: "//js.syncfusion.com/demos/ejServices/api/Spreadsheet/Import"
+            },
+            loadComplete: "loadComplete"
+        });
+        });
+    function loadComplete(args) {
+        var xlSort = this.XLSort;
+        this.setWidthToColumns([100, 145, 145, 170, 185, 180]);
+        this.sheetRename("Sorting and Filtering");
+        this.XLFormat.format({ "style": { "font-weight": "bold", "vertical-align": "middle", "text-align": "center" } }, "A1:G1");
+        xlSort.sortByRange("B2:B15", "B", "ascending");
+        xlSort.sortByRange("E2:E15", "E", "descending");
+        this.XLFilter.filter("A1:G15");
+        this.performSelection("A2");
+    }
+</script>

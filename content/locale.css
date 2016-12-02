@@ -1,0 +1,60 @@
+﻿
+.content-container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.content-container-fluid > .row:first-child {
+    width: 100%;
+}
+
+.content-container-fluid .row {
+    margin: 0;
+}
+
+.content {
+    height: auto;
+}
+
+#contenthere {
+    height: auto;
+    padding-top: 140px;
+    padding-left: 100px;
+}
+
+.e-treeview .e-ul.e-box {
+    line-height: 30px;
+}
+
+.e-pivotgrid {
+    display: inline-block;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+    margin: 5px auto;
+    height: 44px;
+}
+
+.title {
+    float: left;
+    padding-top: 4px;
+    padding-left: 8px;
+}
+
+#footer {
+    background-color: #2a2d33;
+    color: GrayText;
+    height: 48px;
+    width: 100%;
+    float: left;
+    position: relative;
+    /* margin: 68px auto 0; */
+    z-index: 0;
+}
+#tree {
+    margin-top: -9px;
+    border-right: 2px solid lightgray;
+    padding: 20px;
+}

@@ -1,0 +1,40 @@
+﻿<h5>Dialog Mode</h5><div id="Grid"></div>
+<h5>Inline</h5><div id="Grid1"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#Grid").ejGrid({
+            // the datasource "window.gridData" is referred from jsondata.min.js
+            dataSource: window.gridData,
+            allowPaging: true,
+            editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, editMode: ej.Grid.EditMode.Dialog },
+            toolbarSettings: { showToolbar: true, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.Update, ej.Grid.ToolBarItems.Cancel] },
+            columns: [
+                    { field: "OrderID", isPrimaryKey: true, headerText: "Order ID", textAlign: ej.TextAlign.Right, validationRules: { required: true, number: true }, width: 90 },
+                    { field: "CustomerID", headerText: 'Customer ID', validationRules: { required: true, minlength: 3 }, width: 90 },
+                    { field: "EmployeeID", headerText: 'Employee ID', editType: ej.Grid.EditingType.Dropdown, textAlign: ej.TextAlign.Right, width: 80, validationRules: { number: true, range: [0, 1000] } },
+                    { field: "Freight", headerText: 'Freight', textAlign: ej.TextAlign.Right, editType: ej.Grid.EditingType.Numeric, editParams: { decimalPlaces: 2 }, validationRules: { range: [0, 1000] }, width: 80, format: "{0:C}" },
+                    { field: "ShipName", headerText: 'Ship Name', width: 150 },
+                    { field: "ShipCountry", headerText: 'Ship Country', editType: ej.Grid.EditingType.Dropdown, width: 90 }
+            ]
+        });
+    });
+    $(function () {
+        $("#Grid1").ejGrid({
+            // the datasource "window.gridData" is referred from jsondata.min.js
+            dataSource: window.gridData,
+            allowPaging: true,
+            editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true },
+            toolbarSettings: { showToolbar: true, toolbarItems: [ej.Grid.ToolBarItems.Add, ej.Grid.ToolBarItems.Edit, ej.Grid.ToolBarItems.Delete, ej.Grid.ToolBarItems.Update, ej.Grid.ToolBarItems.Cancel] },
+            columns: [
+                    { field: "OrderID", isPrimaryKey: true, headerText: "Order ID", textAlign: ej.TextAlign.Right, validationRules: { required: true, number: true }, width: 90 },
+                    { field: "CustomerID", headerText: 'Customer ID', validationRules: { required: true, minlength: 3 }, width: 90 },
+                    { field: "EmployeeID", headerText: 'Employee ID', editType: ej.Grid.EditingType.Dropdown, textAlign: ej.TextAlign.Right, width: 80, validationRules: { number: true, range: [0, 1000] } },
+                    { field: "Freight", headerText: 'Freight', textAlign: ej.TextAlign.Right, editType: ej.Grid.EditingType.Numeric, editParams: { decimalPlaces: 2 }, validationRules: { range: [0, 1000] }, width: 80, format: "{0:C}" },
+                    { field: "ShipName", headerText: 'Ship Name', width: 150 },
+                    { field: "ShipCountry", headerText: 'Ship Country', editType: ej.Grid.EditingType.Dropdown, width: 90 }
+            ]
+        });
+    });
+
+</script>

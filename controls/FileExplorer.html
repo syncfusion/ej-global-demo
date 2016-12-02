@@ -1,0 +1,29 @@
+﻿<div id="fileExplorer"></div>
+<script type="text/javascript">
+        $(function () {
+            var localServ, ajaxDataType;
+            localServ = "http://js.syncfusion.com/demos/ejServices/api/FileExplorer/FileOperations";
+            if (isRestrictCrossOrigin()) {
+                //IE8, IE9 browser restrict CORS, so we set ajax request as JSONP to enable CORS
+                ajaxDataType = "jsonp";
+                //we have called "PerformJSONPAction" method to handle JSONP AJAX requests
+                localServ = "http://js.syncfusion.com/demos/ejServices/api/FileExplorer/FileOperationsCors";
+            }
+
+            $("#fileExplorer").ejFileExplorer({
+                isResponsive: true,
+                width: "100%",
+                minWidth: "150px",
+                fileTypes: "*.png, *.gif, *.jpg, *.jpeg, *.docx",
+                layout: "tile",
+                path: "http://js.syncfusion.com/demos/ejServices/Content/FileBrowser/",
+                ajaxAction: localServ,
+                ajaxDataType: ajaxDataType
+            });
+        });
+
+        function isRestrictCrossOrigin() {
+            browserInfo = ej.browserInfo();
+            return (browserInfo.name == 'msie' && browserInfo.version <= 9) ? true : false;
+        }
+</script>

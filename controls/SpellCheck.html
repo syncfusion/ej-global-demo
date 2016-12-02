@@ -1,0 +1,23 @@
+﻿<div id="TextArea" class="sentence" contenteditable="true" name="sentence">
+ impcat
+</div><br />
+<div>
+    <input type="button" id="SpellCheck" />
+</div>
+<script type="text/javascript">
+        $(function () {
+            $("#TextArea").ejSpellCheck({
+                dictionarySettings: {
+                    dictionaryUrl: "//js.syncfusion.com/demos/ejServices/api/SpellCheck/CheckWords",
+                    customDictionaryUrl: "//js.syncfusion.com/demos/ejServices/api/SpellCheck/AddToDictionary"
+                },
+                contextMenuSettings: { enable: false }
+            });
+            $("#SpellCheck").ejButton({ width: "200px", height: "25px", click: "showDialog", text: "Spell check using dialog" });
+        });
+
+        function showDialog() {
+            var spellObj = $("#TextArea").data("ejSpellCheck");
+            spellObj.showInDialog();
+        }
+</script>

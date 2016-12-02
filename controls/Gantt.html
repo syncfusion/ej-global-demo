@@ -1,0 +1,90 @@
+﻿<div id="GanttContainer" style="height:450px;width:100%;" />
+<script type="text/javascript">
+
+    //DATA SOURCE DECLARATION OF GANTT CONTROL
+    var data = [
+         {
+             "TaskID": 1,
+             "TaskName": "Parent Task 1",
+             "StartDate": "02/23/2014",
+             "EndDate": "02/27/2014",
+             "Progress": "40",
+             "Children": [
+                  { "TaskID": 2, "TaskName": "Child Task 1", "StartDate": "02/23/2014", "EndDate": "02/27/2014", "Progress": "40" },
+                  { "TaskID": 3, "TaskName": "Child Task 2", "StartDate": "02/23/2014", "EndDate": "02/27/2014", "Progress": "40", },
+                  { "TaskID": 4, "TaskName": "Child Task 3", "StartDate": "02/23/2014", "EndDate": "02/27/2014", "Duration": 5, "Progress": "40", }
+             ]
+         },
+         {
+             "TaskID": 5,
+             "TaskName": "Parent Task 2",
+             "StartDate": "03/14/2014",
+             "EndDate": "03/18/2014",
+             "Progress": "40",
+             "Children": [
+                  { "TaskID": 6, "TaskName": "Child Task 1", "StartDate": "03/02/2014", "EndDate": "03/06/2014", "Progress": "40" },
+                  { "TaskID": 7, "TaskName": "Child Task 2", "StartDate": "03/02/2014", "EndDate": "03/06/2014", "Progress": "40", },
+                  { "TaskID": 8, "TaskName": "Child Task 3", "StartDate": "03/02/2014", "EndDate": "03/06/2014", "Progress": "40", },
+                  { "TaskID": 9, "TaskName": "Child Task 4", "StartDate": "03/02/2014", "EndDate": "03/06/2014", "Progress": "40" }
+             ]
+         },
+         {
+             "TaskID": 10,
+             "TaskName": "Parent Task 3",
+             "StartDate": "03/09/2014",
+             "EndDate": "03/13/2014",
+             "Progress": "40",
+             "Children": [
+                  { "TaskID": 11, "TaskName": "Child Task 1", "StartDate": "03/9/2014", "EndDate": "03/13/2014", "Progress": "40" },
+                  { "TaskID": 12, "TaskName": "Child Task 2", "StartDate": "03/9/2014", "EndDate": "03/13/2014", "Progress": "40", },
+                  { "TaskID": 13, "TaskName": "Child Task 3", "StartDate": "03/9/2014", "EndDate": "03/13/2014", "Progress": "40", },
+                  { "TaskID": 14, "TaskName": "Child Task 4", "StartDate": "03/9/2014", "EndDate": "03/13/2014", "Progress": "40", },
+                  { "TaskID": 15, "TaskName": "Child Task 5", "StartDate": "03/9/2014", "EndDate": "03/13/2014", "Progress": "40", }
+             ]
+         }
+
+    ];
+
+    $(function () {
+        $("#GanttContainer").ejGantt({
+            dataSource: data,
+            allowSelection: true,
+            allowColumnResize: true,
+            taskIdMapping: "TaskID",
+            taskNameMapping: "TaskName",
+            scheduleStartDate: "02/23/2014",
+            scheduleEndDate: "03/30/2014",
+            startDateMapping: "StartDate",
+            endDateMapping: "EndDate",
+            progressMapping: "Progress",
+            childMapping: "Children",
+            treeColumnIndex: 1,
+            enableContextMenu: true,
+            predecessorMapping: "predecessor",
+            isResponsive: true,
+            allowGanttChartEditing: false,
+            editSettings: {
+                allowEditing: true,
+                allowAdding: true,
+                allowDeleting: true,
+                allowIndent: true,
+                editMode: "cellEditing"
+            },
+            toolbarSettings: {
+                showToolbar: true,
+                toolbarItems: [
+                ej.Gantt.ToolbarItems.Add,
+                ej.Gantt.ToolbarItems.Edit,
+                ej.Gantt.ToolbarItems.Delete,
+                ej.Gantt.ToolbarItems.Update,
+                ej.Gantt.ToolbarItems.Cancel,
+                ej.Gantt.ToolbarItems.Indent,
+                ej.Gantt.ToolbarItems.Outdent,
+                ej.Gantt.ToolbarItems.ExpandAll,
+                ej.Gantt.ToolbarItems.CollapseAll,
+                ej.Gantt.ToolbarItems.Search
+                ]
+            }
+        });
+    });
+</script>
