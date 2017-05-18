@@ -48,7 +48,7 @@
     "jquery": "^3.1.1",
     "jsrender": "^0.9.75",
 	"jquery-validation-unobtrusive":"^3.2.6",
-    "syncfusion-javascript": "^14.4.15"
+    "syncfusion-javascript": "*"
   },
    "devDependencies": {
    "lite-server": "^2.2.2"
