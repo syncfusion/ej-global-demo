@@ -10,11 +10,10 @@
     <link href="content/default.css" rel="stylesheet" />
     <link href="content/default-responsive.css" rel="stylesheet" />
     <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"> </script>    
-    <script src="node_modules/syncfusion-javascript/node_modules/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="node_modules/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="node_modules/jsrender/jsrender.min.js"></script>
     <script src="node_modules/syncfusion-javascript/Scripts/ej/web/ej.web.all.min.js" type="text/javascript"></script>	
-	<script src="scripts/data.js" type="text/javascript"></script>
+    <script src="scripts/data.js" type="text/javascript"></script>
     <script src="scripts/jsondata.min.js"></script>
     <script src="scripts/jsonkanbandata.js"></script>
     <script src="scripts/pivotgrid.datasource.js"></script>
@@ -22,14 +21,14 @@
     <script src="scripts/xljsondata.min.js"></script>
     <script src="scripts/jsontreegriddata.js"></script>
     <script src="scripts/diagramcommon.js"></script>	
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/i18n/ej.culture.de-DE.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/i18n/ej.culture.en-US.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/i18n/ej.culture.es-ES.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/i18n/ej.culture.fr-FR.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/l10n/ej.localetexts.de-DE.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/l10n/ej.localetexts.en-US.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/l10n/ej.localetexts.es-ES.js"></script>
-    <script src="node_modules/syncfusion-javascript/node_modules/syncfusion-ej-global/l10n/ej.localetexts.fr-FR.js"></script>
+    <script src="node_modules/syncfusion-ej-global/i18n/ej.culture.de-DE.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/i18n/ej.culture.en-US.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/i18n/ej.culture.es-ES.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/i18n/ej.culture.fr-FR.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/l10n/ej.localetexts.de-DE.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/l10n/ej.localetexts.en-US.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/l10n/ej.localetexts.es-ES.min.js"></script>
+    <script src="node_modules/syncfusion-ej-global/l10n/ej.localetexts.fr-FR.min.js"></script>
 
 </head>
 
@@ -115,9 +114,9 @@
         function onChange(args) {
             ej.setCulture($("#culture").val());
             if ((txt == "controls/Editing-Form.html")||(txt == "controls/Editing.html")||(txt == "controls/Filtering.html")||(txt == "controls/Grouping.html")||(txt == "controls/Paging.html")||(txt == "controls/Sorting.html")) {
-                if (args.text == "es-ES") document.body.appendChild(document.createElement("script")).src = "node_modules/syncfusion-javascript/node_modules/jquery-validation/dist/localization/messages_es.js";
-                else if (args.text == "de-DE") document.body.appendChild(document.createElement("script")).src = "node_modules/syncfusion-javascript/node_modules/jquery-validation/dist/localization/messages_de.js";
-                else if (args.text == "fr-FR") document.body.appendChild(document.createElement("script")).src = "node_modules/syncfusion-javascript/node_modules/jquery-validation/dist/localization/messages_fr.js";
+                if (args.text == "es-ES") document.body.appendChild(document.createElement("script")).src = "node_modules/jquery-validation/dist/localization/messages_es.js";
+                else if (args.text == "de-DE") document.body.appendChild(document.createElement("script")).src = "node_modules/jquery-validation/dist/localization/messages_de.js";
+                else if (args.text == "fr-FR") document.body.appendChild(document.createElement("script")).src = "node_modules/jquery-validation/dist/localization/messages_fr.js";
             }
             $("#contenthere").load(txt);
         }
